@@ -12,8 +12,7 @@ import time
 
 from pathlib import Path
 home = str(Path.home())
-
-csv = 'coding/python/speedtest.csv'
+csv = 'speedtest.csv'
 
 response = subprocess.Popen('/usr/bin/speedtest-cli --simple --server 4087', shell=True, stdout=subprocess.PIPE).stdout.read()
 
