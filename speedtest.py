@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # vim:fileencoding=utf-8:ft=python:foldmethod=marker
 
-# Path:     ~/coding/python/speedtest.py
-# User:     klassiker [mrdotx]
-# GitHub:   https://github.com/mrdotx/python
+# path:       ~/coding/python/speedtest.py
+# user:       klassiker [mrdotx]
+# github:     https://github.com/mrdotx/python
+# date:       2019-11-03 17:22:47
 
 import os
 import re
