@@ -1,3 +1,4 @@
 | python scripts | comment                                       |
 | :------------- | :-------------------------------------------- |
-| speedtest.py   | create structured csv file from speedtest-cli |
+| link_parser.py | parse links from url with beautifilsoup       |
+| speedtest.py   | create structured csv file with speedtest-cli |
