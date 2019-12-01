@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-# vim:fileencoding=utf-8:ft=python:foldmethod=marker
-
-# path:       ~/coding/python/speedtest.py
-# user:       klassiker [mrdotx]
-# github:     https://github.com/mrdotx/python
-# date:       2019-11-03 17:22:47
+"""
+path:       ~/coding/python/speedtest.py
+user:       klassiker [mrdotx]
+github:     https://github.com/mrdotx/python
+date:       2019-12-01 22:55:17
+"""
 
 import os
 import re
@@ -12,26 +12,29 @@ import subprocess
 import time
 
 from pathlib import Path
-home = str(Path.home())
-csv = 'speedtest.csv'
+HOME = str(Path.home())
+CSV = 'speedtest.csv'
 
-response = subprocess.Popen('/usr/bin/speedtest-cli --simple --server 4087', shell=True, stdout=subprocess.PIPE).stdout.read()
+RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple --server 4087',
+                            shell=True, stdout=subprocess.PIPE).stdout.read()
 
-response = response.decode('utf-8')
+RESPONSE = RESPONSE.decode('utf-8')
 
-ping = re.findall('Ping:\s(.*?)\s', response, re.MULTILINE)
-download = re.findall('Download:\s(.*?)\s', response, re.MULTILINE)
-upload = re.findall('Upload:\s(.*?)\s', response, re.MULTILINE)
+PING = re.findall('Ping:\s(.*?)\s', RESPONSE, re.MULTILINE)
+DOWNLOAD = re.findall('Download:\s(.*?)\s', RESPONSE, re.MULTILINE)
+UPLOAD = re.findall('Upload:\s(.*?)\s', RESPONSE, re.MULTILINE)
 
-ping = ping[0].replace(',', '.')
-download = download[0].replace(',', '.')
-upload = upload[0].replace(',', '.')
+PING = PING[0].replace(',', '.')
+DOWNLOAD = DOWNLOAD[0].replace(',', '.')
+UPLOAD = UPLOAD[0].replace(',', '.')
 
 try:
-    f = open(home + "/" + csv, 'a+')
-    if os.stat(home + "/" + csv).st_size == 0:
-            f.write('Date,Time,Ping (ms),Download (Mbit/s),Upload (Mbit/s)\r\n')
+    F = open(HOME + "/" + CSV, 'a+')
+    if os.stat(HOME + "/" + CSV).st_size == 0:
+        F.write('Date,Time,Ping (ms),Download (Mbit/s),Upload (Mbit/s)\r\n')
 except:
     pass
 
-f.write('{},{},{},{},{}\r\n'.format(time.strftime('%m/%d/%y'), time.strftime('%H:%M'), ping, download, upload))
+F.write('{},{},{},{},{}\r\n'.format(time.strftime('%m/%d/%y'),
+                                    time.strftime('%H:%M'), PING, DOWNLOAD,
+                                    UPLOAD))
