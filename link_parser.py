@@ -3,10 +3,8 @@
 path:       ~/coding/python/link_parser.py
 user:       klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2019-12-01 22:57:15
+date:       2019-12-02 15:31:37
 """
-
-# todo: page load
 
 import sys
 from urllib.parse import urlparse
