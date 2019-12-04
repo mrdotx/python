@@ -1,18 +1,18 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 path:       ~/coding/python/speed_test.py
 user:       klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2019-12-02 15:32:52
+date:       2019-12-04 16:12:46
 """
 
 import os
 import re
 import subprocess
 import time
-
 from pathlib import Path
-HOME = str(Path.home())
+
+DIR = str(Path.home())
 CSV = 'speed_test.csv'
 
 RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple --server 4087',
@@ -29,8 +29,8 @@ DOWNLOAD = DOWNLOAD[0].replace(',', '.')
 UPLOAD = UPLOAD[0].replace(',', '.')
 
 try:
-    F = open(HOME + "/" + CSV, 'a+')
-    if os.stat(HOME + "/" + CSV).st_size == 0:
+    F = open(DIR + "/" + CSV, 'a+')
+    if os.stat(DIR + "/" + CSV).st_size == 0:
         F.write(
             'Date,'
             'Time,'
@@ -44,7 +44,7 @@ except ValueError:
 F.write(
     '{},{},{},{},{}\r\n'.format(
         time.strftime('%d.%m.%Y'),
-        time.strftime('%H:%M'),
+        time.strftime('%H:%M:%S'),
         PING,
         DOWNLOAD,
         UPLOAD

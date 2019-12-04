@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 path:       ~/coding/python/link_parser.py
 user:       klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2019-12-02 19:57:45
+date:       2019-12-04 16:12:21
 """
 
 import sys
@@ -11,11 +11,13 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 
-USAGE = """Usage:
-  link_parser.py [url]
-Example:
-  link_parser.py https://www.youtube.com/user/.../videos
-"""
+HELP = """link_parser.sh -- script to grab links from websites
+  Usage:
+    link_parser.py [url]
+  Setting:
+    [url] = url to grab links from
+  Example:
+    link_parser.py https://www.youtube.com/user/.../videos"""
 
 try:
     URL = sys.argv[1]
@@ -32,4 +34,4 @@ try:
         if 'href' in link.attrs:
             print(str(SITE + link.attrs['href']))
 except IndexError:
-    print(USAGE)
+    print(HELP)
