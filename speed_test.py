@@ -3,7 +3,7 @@
 path:       ~/projects/python/speed_test.py
 user:       klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2019-12-21 14:47:21
+date:       2020-01-13T12:18:19+0100
 """
 
 import os

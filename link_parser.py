@@ -3,7 +3,7 @@
 path:       ~/projects/python/link_parser.py
 user:       klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2019-12-21 14:46:51
+date:       2020-01-13T12:18:10+0100
 """
 
 import sys
