@@ -1,0 +1,10 @@
+[Unit]
+Description=hourly run speed_test.service
+
+[Timer]
+OnCalendar=0/1:45:00
+AccuracySec=5m
+Unit=speed_test.service
+
+[Install]
+WantedBy=timers.target

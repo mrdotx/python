@@ -1,0 +1,10 @@
+[Unit]
+Description=speed test in user contaxt alarm
+
+[Service]
+User=alarm
+Type=oneshot
+ExecStart=/home/alarm/bin/speed_test.py
+
+[Install]
+WantedBy=multi-user.target
