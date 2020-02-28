@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-path:       ~/projects/python/speed_test.py
+path:       ~/repos/python/speed_test.py
 author:     klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2020-02-03T13:23:47+0100
+date:       2020-02-28T08:19:23+0100
 """
 
 import os
