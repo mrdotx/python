@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-path:       ~/repos/python/link_parser.py
+path:       ~/.local/share/repos/python/link_parser.py
 author:     klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2020-02-28T08:19:11+0100
+date:       2020-03-25T23:21:38+0100
 """
 
 import sys
