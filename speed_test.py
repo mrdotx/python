@@ -3,7 +3,7 @@
 path:       ~/.local/share/repos/python/speed_test.py
 author:     klassiker [mrdotx]
 github:     https://github.com/mrdotx/python
-date:       2020-03-25T23:21:55+0100
+date:       2020-04-11T18:42:50+0200
 """
 
 import os
@@ -15,7 +15,7 @@ from pathlib import Path
 DIR = str(Path.home())
 CSV = 'speed_test.csv'
 
-RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple --server 4087',
+RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --server 28594',
                             shell=True, stdout=subprocess.PIPE).stdout.read()
 
 RESPONSE = RESPONSE.decode('utf-8')
