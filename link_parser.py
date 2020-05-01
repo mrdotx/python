@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""
-path:       /home/klassiker/.local/share/repos/python/link_parser.py
-author:     klassiker [mrdotx]
-github:     https://github.com/mrdotx/python
-date:       2020-04-29T11:12:37+0200
-"""
+
+# path:       /home/klassiker/.local/share/repos/python/link_parser.py
+# author:     klassiker [mrdotx]
+# github:     https://github.com/mrdotx/python
+# date:       2020-05-01T23:52:11+0200
 
 import sys
 from urllib.parse import urlparse

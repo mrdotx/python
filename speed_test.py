@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""
-path:       /home/klassiker/.local/share/repos/python/speed_test.py
-author:     klassiker [mrdotx]
-github:     https://github.com/mrdotx/python
-date:       2020-04-29T11:12:47+0200
-"""
+
+# path:       /home/klassiker/.local/share/repos/python/speed_test.py
+# author:     klassiker [mrdotx]
+# github:     https://github.com/mrdotx/python
+# date:       2020-05-01T23:52:41+0200
 
 import os
 import re
