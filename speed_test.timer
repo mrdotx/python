@@ -1,7 +1,7 @@
 # path:       /home/klassiker/.local/share/repos/python/speed_test.timer
 # author:     klassiker [mrdotx]
-# github:     https://github.com/mrdotx/dotfiles
-# date:       2020-04-30T19:13:28+0200
+# github:     https://github.com/mrdotx/python
+# date:       2020-05-23T14:33:11+0200
 
 [Unit]
 Description=hourly run speed_test.service
