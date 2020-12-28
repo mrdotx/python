@@ -1,7 +1,7 @@
 # path:       /home/klassiker/.local/share/repos/python/speed_test.service
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/python
-# date:       2020-05-23T14:32:59+0200
+# date:       2020-12-28T15:23:40+0100
 
 [Unit]
 Description=speed test in user contaxt alarm
@@ -9,7 +9,7 @@ Description=speed test in user contaxt alarm
 [Service]
 User=alarm
 Type=oneshot
-ExecStart=/home/alarm/bin/speed_test.py
+ExecStart=%h/.local/share/repos/python/speed_test.py
 
 [Install]
 WantedBy=multi-user.target
