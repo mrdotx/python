@@ -3,15 +3,23 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-18T13:24:34+0100
+date:   2021-03-18T15:47:06+0100
 """
 
+import sys
 import multiprocessing as mp
 import time
 
+ARGS_NUMBER = len(sys.argv)
 # 0 and 1 are not prime numbers
 START_NUMBER = 2
 END_NUMBER = 100000
+
+if ARGS_NUMBER == 2:
+    END_NUMBER = int(sys.argv[1])
+elif ARGS_NUMBER == 3:
+    START_NUMBER = int(sys.argv[1])
+    END_NUMBER = int(sys.argv[2])
 
 num_processes = mp.cpu_count() * 4
 
