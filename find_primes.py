@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-18T13:00:08+0100
+date:   2021-03-18T13:24:34+0100
 """
 
 import multiprocessing as mp
@@ -11,7 +11,7 @@ import time
 
 # 0 and 1 are not prime numbers
 START_NUMBER = 2
-END_NUMBER = 200000
+END_NUMBER = 100000
 
 num_processes = mp.cpu_count() * 4
 
