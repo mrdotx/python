@@ -3,30 +3,18 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-20T18:18:12+0100
+date:   2021-03-21T09:06:24+0100
 """
 
-import sys
+import argparse
 import multiprocessing as mp
 import time
 
-ARGS_NUMBER = len(sys.argv)
-# 0 and 1 are not prime numbers
-START_NUMBER = 2
-END_NUMBER = 100000
-
-if ARGS_NUMBER == 2:
-    END_NUMBER = int(sys.argv[1])
-elif ARGS_NUMBER == 3:
-    START_NUMBER = int(sys.argv[1])
-    END_NUMBER = int(sys.argv[2])
-
-num_processes = mp.cpu_count() * 4
-
 def chunks(seq, procs):
     """
-    calculate chunks
+    calculate chunks by processes
     """
+
     size = len(seq)
     start = 0
     for i in range(1, procs + 1):
@@ -38,6 +26,7 @@ def calc_primes(numbers):
     """
     prove that a number is a prime number
     """
+
     primes = []
 
     for number in numbers:
@@ -54,26 +43,78 @@ def main():
     """
     main function
     """
-    print('cpu processes      : ' + str(num_processes))
-    print('')
-    print('primes between     : ' + str(START_NUMBER) + '-' + str(END_NUMBER))
 
+    # create a parser object
+    parser = argparse.ArgumentParser(description = "a programm to find \
+            primes in a range of numbers")
+
+    # add arguments
+    parser.add_argument("-n", "--numbers", action = 'store_true',
+                        default = False, dest = "numbers",
+                        help = "print prime numbers that were found")
+
+    parser.add_argument("-b", "--begin", type = int, nargs = 1,
+                        metavar = "number", dest = "begin",
+                        help = "number to begin with \
+                                [default: 2]")
+
+    parser.add_argument("-e", "--end", type = int, nargs = 1,
+                        metavar = "number", dest = "end",
+                        help = "number to stop at \
+                                [default: 100000]")
+
+    parser.add_argument("-p", "--processes", type = int, nargs = 1,
+                        metavar = "number", dest = "processes",
+                        help = "number of processes per cpu to use \
+                                [default: 4]")
+
+    # parse the arguments from standard input
+    args = parser.parse_args()
+
+    # set constants depending on arguments
+    if args.begin is None:
+        begin_number = 2
+    else:
+        begin_number = args.begin[0]
+
+    if args.end is None:
+        end_number = 100000
+    else:
+        end_number = args.end[0]
+
+    if args.processes is None:
+        num_processes = mp.cpu_count() * 4
+    else:
+        num_processes = mp.cpu_count() * args.processes[0]
+
+    # begin output
+    print('cpu processes      : ' + str(num_processes))
+    print('primes between     : ' + str(begin_number) + '-' + str(end_number))
+
+    # store start time
     start = time.time()
 
+    # open process pool
     pool = mp.Pool(num_processes)
 
-    parts = chunks(range(START_NUMBER, END_NUMBER, 1), num_processes)
+    # prove primes
+    parts = chunks(range(begin_number, end_number, 1), num_processes)
     results = pool.map(calc_primes, parts)
-    flat_results = [i for x in results for i in x]
+    flat_results = sum(results, [])
 
+    # close process pool
     pool.close()
 
-    end = round(time.time() - start, 3)
+    # time elapsed in seconds
+    elapsed = round(time.time() - start, 3)
 
+    # output results
     print('primes found       : ' + str(len(flat_results)))
-    # print('primes             : ' + str(results))
-    print('')
-    print('time elasped (sec) : ' + str(end))
+
+    if args.numbers is True:
+        print('primes             : ' + str(flat_results))
+
+    print('\ntime elapsed (sec) : ' + str(elapsed))
 
 if __name__ == "__main__":
     main()
