@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-21T09:06:24+0100
+date:   2021-03-21T09:31:08+0100
 """
 
 import argparse
@@ -45,8 +45,8 @@ def main():
     """
 
     # create a parser object
-    parser = argparse.ArgumentParser(description = "a programm to find \
-            primes in a range of numbers")
+    parser = argparse.ArgumentParser(description = "a tool to find primes \
+            in a range of numbers")
 
     # add arguments
     parser.add_argument("-n", "--numbers", action = 'store_true',
@@ -65,7 +65,7 @@ def main():
 
     parser.add_argument("-p", "--processes", type = int, nargs = 1,
                         metavar = "number", dest = "processes",
-                        help = "number of processes per cpu to use \
+                        help = "number of processes to be used per cpu \
                                 [default: 4]")
 
     # parse the arguments from standard input
@@ -88,7 +88,7 @@ def main():
         num_processes = mp.cpu_count() * args.processes[0]
 
     # begin output
-    print('cpu processes      : ' + str(num_processes))
+    print('processes          : ' + str(num_processes))
     print('primes between     : ' + str(begin_number) + '-' + str(end_number))
 
     # store start time
@@ -100,13 +100,15 @@ def main():
     # prove primes
     parts = chunks(range(begin_number, end_number, 1), num_processes)
     results = pool.map(calc_primes, parts)
-    flat_results = sum(results, [])
 
     # close process pool
     pool.close()
 
     # time elapsed in seconds
     elapsed = round(time.time() - start, 3)
+
+    # flat results from used processes
+    flat_results = sum(results, [])
 
     # output results
     print('primes found       : ' + str(len(flat_results)))
