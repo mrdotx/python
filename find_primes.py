@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-21T18:18:41+0100
+date:   2021-03-21T18:32:19+0100
 """
 
 import argparse
@@ -62,7 +62,7 @@ def main():
     parser.add_argument("-e", "--end", type = int, nargs = 1,
                         metavar = "number", dest = "end",
                         help = "positive number to stop at \
-                                [default: 100000]")
+                                [default: 99999]")
 
     parser.add_argument("-p", "--processes", type = int, nargs = 1,
                         metavar = "number", dest = "processes",
@@ -79,7 +79,7 @@ def main():
         begin_number = args.begin[0]
 
     if args.end is None:
-        end_number = 100000
+        end_number = 99999
     else:
         end_number = args.end[0]
 
