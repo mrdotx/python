@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-03-21T09:31:08+0100
+date:   2021-03-21T18:18:41+0100
 """
 
 import argparse
@@ -35,7 +35,8 @@ def calc_primes(numbers):
             if number % div_number == 0:
                 found_prime = False
                 break
-        if found_prime:
+        # 0 and 1 are not prime numbers
+        if found_prime and number > 1:
             primes.append(number)
     return primes
 
@@ -55,12 +56,12 @@ def main():
 
     parser.add_argument("-b", "--begin", type = int, nargs = 1,
                         metavar = "number", dest = "begin",
-                        help = "number to begin with \
-                                [default: 2]")
+                        help = "positive number to begin with \
+                                [default: 0]")
 
     parser.add_argument("-e", "--end", type = int, nargs = 1,
                         metavar = "number", dest = "end",
-                        help = "number to stop at \
+                        help = "positive number to stop at \
                                 [default: 100000]")
 
     parser.add_argument("-p", "--processes", type = int, nargs = 1,
@@ -73,7 +74,7 @@ def main():
 
     # set constants depending on arguments
     if args.begin is None:
-        begin_number = 2
+        begin_number = 0
     else:
         begin_number = args.begin[0]
 
@@ -88,8 +89,8 @@ def main():
         num_processes = mp.cpu_count() * args.processes[0]
 
     # begin output
-    print('processes          : ' + str(num_processes))
-    print('primes between     : ' + str(begin_number) + '-' + str(end_number))
+    print('processes               : ' + str(num_processes))
+    print('prime numbers between   : ' + str(begin_number) + '-' + str(end_number))
 
     # store start time
     start = time.time()
@@ -111,12 +112,12 @@ def main():
     flat_results = sum(results, [])
 
     # output results
-    print('primes found       : ' + str(len(flat_results)))
+    print('prime numbers found     : ' + str(len(flat_results)))
 
     if args.numbers is True:
-        print('primes             : ' + str(flat_results))
+        print('prime numbers           : ' + str(flat_results))
 
-    print('\ntime elapsed (sec) : ' + str(elapsed))
+    print('\ntime elapsed in seconds : ' + str(elapsed))
 
 if __name__ == "__main__":
     main()
