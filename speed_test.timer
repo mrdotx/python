@@ -1,15 +1,14 @@
 # path:   /home/klassiker/.local/share/repos/python/speed_test.timer
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/python
-# date:   2021-01-15T13:51:50+0100
+# date:   2023-01-25T10:52:06+0100
 
 [Unit]
 Description=hourly run speed_test.service
 
 [Timer]
 OnCalendar=0/1:45:00
-AccuracySec=5m
-Unit=speed_test.service
+AccuracySec=1m
 
 [Install]
 WantedBy=timers.target
