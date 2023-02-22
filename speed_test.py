@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/speed_test.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2023-02-22T20:52:11+0100
+date:   2023-02-22T21:03:10+0100
 """
 
 import os
@@ -36,17 +36,17 @@ try:
             'Time,'
             'Ping (ms),'
             'Download (Mbit/s),'
-            'Upload (Mbit/s)\r\n'
+            'Upload (Mbit/s)\n'
         )
 
     F.write(
-        '{},{},{},{},{}\r\n'.format(
+        '{},{},{},{},{}\n'.format(
             time.strftime('%d.%m.%Y'),
             time.strftime('%H:%M:%S'),
             PING,
             DOWNLOAD,
             UPLOAD
-            )
+        )
     )
 except ValueError:
     pass
