@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/speed_test.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-05-24T21:04:22+0200
+date:   2023-02-22T20:52:11+0100
 """
 
 import os
@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 DIR = str(Path.home())
-CSV = 'speed_test.csv'
+CSV = '/Public/speed_test.csv'
 
 RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple',
                             shell=True, stdout=subprocess.PIPE).stdout.read()
@@ -29,8 +29,8 @@ DOWNLOAD = DOWNLOAD[0].replace(',', '.')
 UPLOAD = UPLOAD[0].replace(',', '.')
 
 try:
-    F = open(DIR + "/" + CSV, 'a+')
-    if os.stat(DIR + "/" + CSV).st_size == 0:
+    F = open(DIR + CSV, 'a+')
+    if os.stat(DIR + CSV).st_size == 0:
         F.write(
             'Date,'
             'Time,'
