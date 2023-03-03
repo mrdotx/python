@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/speed_test.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2023-02-22T21:03:10+0100
+date:   2023-03-03T12:13:58+0100
 """
 
 import os
@@ -14,6 +14,7 @@ from pathlib import Path
 
 DIR = str(Path.home())
 CSV = '/Public/speed_test.csv'
+HOST = os.uname()[1]
 
 RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple',
                             shell=True, stdout=subprocess.PIPE).stdout.read()
@@ -36,16 +37,18 @@ try:
             'Time,'
             'Ping (ms),'
             'Download (Mbit/s),'
-            'Upload (Mbit/s)\n'
+            'Upload (Mbit/s),'
+            'Hostname\n'
         )
 
     F.write(
-        '{},{},{},{},{}\n'.format(
+        '{},{},{},{},{},{}\n'.format(
             time.strftime('%d.%m.%Y'),
             time.strftime('%H:%M:%S'),
             PING,
             DOWNLOAD,
-            UPLOAD
+            UPLOAD,
+            HOST,
         )
     )
 except ValueError:
