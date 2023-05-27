@@ -3,12 +3,12 @@
 path:   /home/klassiker/.local/share/repos/python/link_parser.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2021-01-15T13:51:18+0100
+date:   2023-05-26T19:27:58+0200
 """
 
 import sys
 from urllib.parse import urlparse
-import requests
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 HELP = """link_parser.sh -- script to grab links from websites
@@ -26,8 +26,8 @@ try:
     SITE = URL_PART.scheme + "://" + URL_PART.netloc
     SITE_PATH = URL_PART.path
 
-    PAGE = requests.get(str(SITE + SITE_PATH))
-    SOUP = BeautifulSoup(PAGE.content, 'html.parser')
+    PAGE = urlopen(str(SITE + SITE_PATH))
+    SOUP = BeautifulSoup(PAGE, 'html.parser')
     LINK_LIST = SOUP.find_all('a')
 
     for link in LINK_LIST:
