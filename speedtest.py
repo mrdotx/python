@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-path:   /home/klassiker/.local/share/repos/python/speed_test.py
+path:   /home/klassiker/.local/share/repos/python/speedtest.py
 author: klassiker [mrdotx]
 github: https://github.com/mrdotx/python
-date:   2023-03-03T12:13:58+0100
+date:   2024-04-29T15:09:45+0200
 """
 
 import os
@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 DIR = str(Path.home())
-CSV = '/Public/speed_test.csv'
+CSV = '/Public/speedtest/speedtest.csv'
 HOST = os.uname()[1]
 
 RESPONSE = subprocess.Popen('/usr/bin/speedtest-cli --simple',
