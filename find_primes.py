@@ -2,8 +2,8 @@
 """
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
-github: https://github.com/mrdotx/python
-date:   2021-03-21T18:32:19+0100
+url:    https://github.com/mrdotx/python
+date:   2025-08-15T03:39:32+0200
 """
 
 import argparse

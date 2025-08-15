@@ -2,8 +2,8 @@
 """
 path:   /home/klassiker/.local/share/repos/python/link_parser.py
 author: klassiker [mrdotx]
-github: https://github.com/mrdotx/python
-date:   2023-05-26T19:27:58+0200
+url:    https://github.com/mrdotx/python
+date:   2025-08-15T03:39:57+0200
 """
 
 import sys

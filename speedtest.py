@@ -2,8 +2,8 @@
 """
 path:   /home/klassiker/.local/share/repos/python/speedtest.py
 author: klassiker [mrdotx]
-github: https://github.com/mrdotx/python
-date:   2024-04-29T15:09:45+0200
+url:    https://github.com/mrdotx/python
+date:   2025-08-15T03:40:05+0200
 """
 
 import os
