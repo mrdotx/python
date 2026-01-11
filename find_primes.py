@@ -3,7 +3,7 @@
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 url:    https://github.com/mrdotx/python
-date:   2025-08-15T03:39:32+0200
+date:   2026-01-11T06:59:17+0100
 """
 
 import argparse
@@ -67,7 +67,7 @@ def main():
     parser.add_argument("-p", "--processes", type = int, nargs = 1,
                         metavar = "number", dest = "processes",
                         help = "number of processes to be used per cpu \
-                                [default: 4]")
+                                [default: " + str(mp.cpu_count()) + "]")
 
     # parse the arguments from standard input
     args = parser.parse_args()
@@ -84,7 +84,7 @@ def main():
         end_number = args.end[0]
 
     if args.processes is None:
-        num_processes = mp.cpu_count() * 4
+        num_processes = mp.cpu_count() * mp.cpu_count()
     else:
         num_processes = mp.cpu_count() * args.processes[0]
 
