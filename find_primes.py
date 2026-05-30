@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/bin/python
 """
 path:   /home/klassiker/.local/share/repos/python/find_primes.py
 author: klassiker [mrdotx]
 url:    https://github.com/mrdotx/python
-date:   2026-01-11T06:59:17+0100
+date:   2026-05-30T04:35:39+0200
 """
 
 import argparse

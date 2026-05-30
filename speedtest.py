@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/bin/python
 """
 path:   /home/klassiker/.local/share/repos/python/speedtest.py
 author: klassiker [mrdotx]
 url:    https://github.com/mrdotx/python
-date:   2025-08-15T03:40:05+0200
+date:   2026-05-30T04:35:50+0200
 """
 
 import os
