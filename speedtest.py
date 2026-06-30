@@ -1,9 +1,9 @@
 #!/bin/python
 """
-path:   /home/klassiker/.local/share/repos/python/speedtest.py
+path:   /home/klassiker/Projects/repos/python/speedtest.py
 author: klassiker [mrdotx]
 url:    https://github.com/mrdotx/python
-date:   2026-05-30T04:35:50+0200
+date:   2026-07-01T00:48:09+0200
 """
 
 import os

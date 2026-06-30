@@ -1,9 +1,9 @@
 #!/bin/python
 """
-path:   /home/klassiker/.local/share/repos/python/link_parser.py
+path:   /home/klassiker/Projects/repos/python/link_parser.py
 author: klassiker [mrdotx]
 url:    https://github.com/mrdotx/python
-date:   2026-05-30T04:35:45+0200
+date:   2026-07-01T00:47:58+0200
 """
 
 import sys
